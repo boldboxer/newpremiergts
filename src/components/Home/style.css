@@ -1,21 +1,45 @@
-/* Add keyframes for zoom-in animation */
-@keyframes zoomIn {
+@-webkit-keyframes scale-in-center {
   0% {
-    transform: scale(1);
-  }
-  50%{
-    transform: scale(1.1);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 1;
   }
   100% {
-    transform: scale(1); /* Adjust the scale value as needed */
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
   }
 }
 
+
+/* General Styles */
 .home-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
+}
+
+.banner {
+  position: relative;
+}
+
+.image-slider {
+  width: 100%;
+  height: 80vh; /* Adjust for smaller screens */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: scale-in-center 1.5s ease-out;
 }
 
 .overlay {
@@ -24,121 +48,149 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 68, 69, 0.192);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.banner {
+.static-banner {
+  position: absolute;
+  top: 60px;
   width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  z-index: 10;
+  color: white;
+  
 }
 
-.image-slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.image-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: zoomIn 30s infinite; /* Apply zoom-in animation over 10 seconds */
-  transition: src 1s ease-in-out; /* Add smooth transition */
+.static-banner h1 {
+  margin: 0;
+  font-size: 3rem;
+  margin-top: -40px;
 }
 
 .banner-content {
   position: absolute;
-  top: 50%;
+  bottom: 150px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  color: white;
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
-  z-index: 10;
-  font-size: 2em; /* Base font size for all screens */
-  padding: 0 20px; /* Reduce horizontal padding for better spacing */
-  display: inline-block;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #f0f0f0;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #f0f0f0;
+}
+
+.apply-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(66, 65, 65);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: -20px;
+}
+
+.apply-button:hover {
+  background-color: gray;
 }
 
 .navigation-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .dot {
-  width: 12px; /* Reduced dot size for cleaner look */
-  height: 12px;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: white;
   border-radius: 50%;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 0 4px; /* Reduced margin between dots */
-  background-color: rgb(66, 65, 65);
+  margin-bottom: 50px;
 }
 
 .dot.active {
-  background-color: rgb(190, 15, 15);
+  background-color: rgb(226, 24, 24);
 }
-
-.apply-button {
-  display: inline-block;
-  padding: 1.1px 30px;
-  font-size: 0.6em;
-  font-weight: bold;
-  background-color: rgb(66, 65, 65);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-right: 60px;
-}
-
-.apply-button:hover {
-  background-color: lightgray;
+.dot:hover {
+  background-color: maroon;
 }
 
 /* Media Queries */
-@media (max-width: 835px) {
-  .banner-content {
-    font-size: 1.5em;
-  }
-}
-
 @media (max-width: 768px) {
+  .image-slider {
+    height: 60vh; /* Reduce height for smaller screens */
+  }
+
+  .static-banner h1 {
+    font-size: 1.4rem; /* Decrease font size for smaller screens */
+    margin-left: 3px;
+  }
+
   .banner-content {
-    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 37px; /* Adjust position for smaller screens */
+    left: 50%;
+    transform: translateX(-50);
+    text-align: center;
+    /* padding-right: 20px; Add space on right */
+  }
+
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
   }
 
   .apply-button {
-    font-size: 0.8em;
-    width: 180px; /* Adjust width for smaller screens */
+    font-size: 0.9rem;
+    margin-bottom: 30px; /* Add more margin to avoid overlap */
   }
 
-  .admin-button {
-    font-size: 0.8em;
-    padding: 8px 16px;
+  .navigation-dots {
+    bottom: 20px; /* Adjust for more space */
   }
-}
 
-@media (max-width: 480px) {
-  .banner-content {
-    font-size: 1.2em;
-    padding: 0 10px; /* Further reduce padding for very small screens */
+  .dot {
+    margin: 0 10px; /* Increase space between dots */
   }
 
   .apply-button {
-    font-size: 0.7em;
-    width: 150px; /* Further reduce width for extra small screens */
+    font-size: 0.9rem;
+    margin: 30px auto 50px;
+    display: inline-block;
+    left: 50%;
   }
 
-  .admin-button {
-    font-size: 0.7em;
-    padding: 6px 12px;
+  .navigation-dots {
+    bottom: 20px;
+    /* left: 50%; */
+    transform: translateX(-50%);
+  }
+
+  .dot {
+    margin: 0 10px;
   }
 }
+
+
+
+
+

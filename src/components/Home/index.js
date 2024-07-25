@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './style.css';
+import './style.css'; 
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [fade, setFade] = useState(false);
-
   const images = [
     '/images/play.jpg',
     '/images/cbc2.jpg',
@@ -15,7 +13,7 @@ const HomePage = () => {
 
   const captions = [
     {
-      title: 'Welcome to New Premier Talent SCHOOL',
+      title: 'Welcome to New Premier Talent School',
       description: 'Empowering students to thrive in a dynamic world.'
     },
     {
@@ -33,20 +31,16 @@ const HomePage = () => {
   ];
 
   const handleImageChange = (index) => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentImageIndex(index);
-      setFade(false);
-    }, ); // Match the CSS transition duration
+    setCurrentImageIndex(index);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleImageChange((currentImageIndex + 1) % images.length);
-    }, 7000);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
 
-    return () => clearInterval(interval); // eslint-disable-next-line
-  }, [currentImageIndex]);
+    return () => clearInterval(interval);// eslint-disable-next-line
+  }, []);
 
   const handleApplyForAdmission = () => {
     console.log('Apply for Admission button clicked');
@@ -56,13 +50,17 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <div className="banner">
-        <div className="image-slider">
-          <img
-            src={images[currentImageIndex]}
-            alt="Slideshow"
-            className={fade ? 'fade-out' : ''}
-          />
+        <div
+          key={currentImageIndex}
+          className="image-slider"
+          style={{
+            backgroundImage: `url(${images[currentImageIndex]})`
+          }}
+        ></div>
           <div className="overlay"></div>
+          <div className="static-banner">
+            <h1>Welcome to New Premier Talent School</h1>
+          </div>
           <div className="banner-content">
             <h1>{captions[currentImageIndex].title}</h1>
             <p>{captions[currentImageIndex].description}</p>
@@ -87,7 +85,7 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
