@@ -8,13 +8,13 @@ const Footer = () => {
         <h3>Contact Information</h3>
         <ul className="contact-list">
           <li>
-            Address: [Your School Address]
+            Address: Keumbu & Narok -Kenya
           </li>
           <li>
             Phone: 0712345678
           </li>
           <li>
-            Email: gerartalentschools2@gmail.com
+            Email: gerartalentschool@gmail.com
           </li>
         </ul>
       </div>
@@ -44,10 +44,9 @@ const Footer = () => {
       </div>
       <div className="footer-section">
         <h3>Affiliate Schools</h3>
-        <ul>
-          <li>British Curriculum</li>
-          <li>Kenyan CBC Curriculum</li>
-          <li>East African Curriculum</li>
+        <ul >
+          <li><a href="#cbc-keumbu">Kenyan CBC Keumbu</a></li>
+          <li><a href="#cbc-narok">Kenyan CBC Narok</a></li>
         </ul>
       </div>
       <div className="footer-section">

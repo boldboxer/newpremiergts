@@ -5,14 +5,16 @@
   /* width: 100%; */
   background: rgb(255, 255, 255);
   padding: 10px;
-  height: 90px; /* Reduced height */
+  height: 90px;
+  /* Reduced height */
   transition: height 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
 .navbar.scrolled {
-  height: 70px; /* Height when scrolled */
+  height: 70px;
+  /* Height when scrolled */
 }
 
 .navbar-container {
@@ -33,7 +35,8 @@
   cursor: pointer;
   font-size: 24px;
   color: maroon;
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
 }
 
 .nav-menu {
@@ -50,10 +53,12 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 90px; /* Adjusted to ensure it's below the navbar */
+  top: 90px;
+  /* Adjusted to ensure it's below the navbar */
   right: 20px;
   background-color: maroon;
-  width: 250px; /* Set a fixed width for the menu */
+  width: 250px;
+  /* Set a fixed width for the menu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 10px;
@@ -136,6 +141,21 @@
 
 /* Media queries for responsiveness */
 
+@media (min-width: 1024px) {
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+}
+
 /* For tablets and larger devices */
 @media (min-width: 768px) {
   .navbar {
@@ -143,7 +163,12 @@
   }
 
   .menu-icon {
-    display: none; /* Hide menu icon on larger screens */
+    display: none;
+    /* Hide menu icon on larger screens */
+  }
+
+  .nav-item:hover .dropdown-menu {
+    display: block;
   }
 
   .nav-link {
@@ -188,10 +213,13 @@
   .nav-menu {
     display: none;
     position: fixed;
-    top: 90px; /* Adjusted to be below the navbar */
-    left: 0; /* Full width menu */
+    top: 90px;
+    /* Adjusted to be below the navbar */
+    left: 0;
+    /* Full width menu */
     width: 100%;
-    height: calc(100vh - 90px); /* Full height minus the navbar */
+    height: calc(100vh - 90px);
+    /* Full height minus the navbar */
     background-color: #fdf9f9;
     flex-direction: column;
     justify-content: flex-start;
@@ -201,13 +229,16 @@
     list-style: none;
     padding: 10px;
     overflow-y: auto;
-    transform: translateX(-100%); /* Hide off-screen initially */
-    transition: transform 0.3s ease; /* Slide in effect */
+    transform: translateX(-100%);
+    /* Hide off-screen initially */
+    transition: transform 0.3s ease;
+    /* Slide in effect */
   }
 
   .nav-menu.mobile-menu-open {
     display: flex;
-    transform: translateX(0); /* Slide in when active */
+    transform: translateX(0);
+    /* Slide in when active */
     overflow-x: hidden;
   }
 
@@ -221,7 +252,7 @@
   .dropdown-menu {
     position: static;
   }
-  
+
   /* CSS for close button */
   .close-button {
     display: block;
@@ -231,7 +262,8 @@
     font-size: 24px;
     color: darkgreen;
     cursor: pointer;
-    z-index: 1100; /* Ensure it's above other elements */
+    z-index: 1100;
+    /* Ensure it's above other elements */
   }
 
   /* CSS for inactive background */
@@ -242,8 +274,10 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 999; /* Ensure it's below the menu but above content */
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+    z-index: 999;
+    /* Ensure it's below the menu but above content */
   }
 }
 
