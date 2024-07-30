@@ -12,7 +12,7 @@ const Kindergarten = () => {
 
   return (
     <div className="kindergarten-container">
-      <section className="left-section">
+      <section>
         <h2 className="section-title">Kindergarten</h2>
 
         <div className="image-container">
@@ -151,22 +151,15 @@ const Kindergarten = () => {
               Expressive Arts and Design: Encouraging creativity through art, music, movement,
               and imaginative play, fostering self-expression and exploration.
             </p>
-
           </div>
 
           <div className="additional-right">
             <img src="/images/kinder5.jpg" alt="Additional" />
           </div>
         </div>
-
       </section>
     </div>
   );
 };
 
 export default Kindergarten;
-
-
-
-
-

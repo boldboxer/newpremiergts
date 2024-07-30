@@ -7,7 +7,7 @@ const OurSchools = () => {
       <h2>Our Schools</h2>
       <div className="extracurricular">
         <div className="extracurricular-item" id="cbc-keumbu">
-          <img src="/images/studying.jpg" alt="Academic Trips" />
+          <img src="/images/children_playing3.jpeg" alt="Academic Trips" />
           <p>Kenyan CBC Curriculum Keumbu</p>
         </div>
         <div className="extracurricular-item" id="cbc-narok">
