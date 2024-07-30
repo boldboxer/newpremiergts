@@ -8,7 +8,7 @@ const Offer = () => {
     <div className="offer-container">
       <h1>What We Offer</h1>
       <div className="offer-items">
-        <div className="offer-item">
+        <div className="offer-item" id = "kindergarten">
           <img src="/images/kindergaten.jpg" alt="Kindergarten" />
           <div className="offer-content">
             <FaBabyCarriage className="offer-icon" />
@@ -22,7 +22,7 @@ const Offer = () => {
             </a>
           </div>
         </div>
-        <div className="offer-item">
+        <div className="offer-item" id = "preparatory">
           <img src="/images/preparatory.jpg" alt="Preparatory" />
           <div className="offer-content">
             <FaGraduationCap className="offer-icon" />
@@ -36,7 +36,7 @@ const Offer = () => {
             </a>
           </div>
         </div>
-        <div className="offer-item">
+        <div className="offer-item" id = "junior-high-school">
           <img src="/images/junior.jpg" alt="Junior High School" />
           <div className="offer-content">
             <FaUserGraduate className="offer-icon" />

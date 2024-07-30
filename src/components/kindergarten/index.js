@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './style.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const Kindergarten = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -12,35 +10,8 @@ const Kindergarten = () => {
 
   return (
     <div className="kindergarten-container">
-      <section className="left-section">
+      <section>
         <h2 className="section-title">Kindergarten</h2>
-
-        <div className="image-container">
-          <div className="image-item">
-            <img src="/images/kinder1.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder2.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder3.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder4.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder6.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder5.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder7.jpg" alt="Kindergarten" />
-          </div>
-          <div className="image-item">
-            <img src="/images/kinder8.jpg" alt="Kindergarten" />
-          </div>
-        </div>
 
         <div className="info-container">
           <div className="info-left">
@@ -50,16 +21,31 @@ const Kindergarten = () => {
               and cognitive development. Children will learn through play,
               exploration, and hands-on activities.
             </p>
+            <div className="image-item">
+              <img src="/images/kinder1.jpg" alt="Kindergarten" />
+            </div>
+          </div>
+
+          <div className="info-right">
+            <div className="image-item">
+              <img src="/images/kinder2.jpg" alt="Kindergarten" />
+            </div>
             <p>
               We aim to foster a sense of curiosity and discovery in children,
               encouraging them to ask questions and seek answers through
               exploration of their environment.
             </p>
+          </div>
+
+          <div className="info-left">
             <p>
               Through our activities, children develop key skills such as
               problem-solving, collaboration, and creativity, preparing them
               for future academic success and lifelong learning.
             </p>
+            <div className="image-item">
+              <img src="/images/kinder3.jpg" alt="Kindergarten" />
+            </div>
           </div>
 
           <div className="info-right">
@@ -129,6 +115,9 @@ const Kindergarten = () => {
               Personal, Social and Emotional Development: Building positive relationships,
               self-awareness, and emotional regulation.
             </p>
+            <div className="additional-right">
+            <img src="/images/kinder5.jpg" alt="Additional" />
+          </div>
             <p>
               Communication and Language: Developing listening, speaking, and early
               literacy skills through interactions and language activities.
@@ -151,22 +140,13 @@ const Kindergarten = () => {
               Expressive Arts and Design: Encouraging creativity through art, music, movement,
               and imaginative play, fostering self-expression and exploration.
             </p>
-
           </div>
 
-          <div className="additional-right">
-            <img src="/images/kinder5.jpg" alt="Additional" />
-          </div>
+
         </div>
-
       </section>
     </div>
   );
 };
 
 export default Kindergarten;
-
-
-
-
-

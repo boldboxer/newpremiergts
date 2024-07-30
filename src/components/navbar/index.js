@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './style.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [schoolsDropdownOpen, setSchoolsDropdownOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [academicDropdownOpen, setAcademicDropdownOpen] = useState(false);
-  const [schoolLifeDropdownOpen, setSchoolLifeDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState('');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,43 +19,14 @@ const Navbar = () => {
     };
   }, []);
 
-  // const toggleDropdown = (dropdown) => {
-  //   switch (dropdown) {
-  //     case 'schools':
-  //       setSchoolsDropdownOpen(!schoolsDropdownOpen);
-  //       break;
-  //     case 'about':
-  //       setAboutDropdownOpen(!aboutDropdownOpen);
-  //       break;
-  //     case 'academic':
-  //       setAcademicDropdownOpen(!academicDropdownOpen);
-  //       break;
-  //     case 'schoolLife':
-  //       setSchoolLifeDropdownOpen(!schoolLifeDropdownOpen);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
-
   const toggleDropdown = (dropdown) => {
-    setSchoolsDropdownOpen(dropdown === 'schools' ? !schoolsDropdownOpen : false);
-    setAboutDropdownOpen(dropdown === 'about' ? !aboutDropdownOpen : false);
-    setAcademicDropdownOpen(dropdown === 'academic' ? !academicDropdownOpen : false);
-    setSchoolLifeDropdownOpen(dropdown === 'schoolLife' ? !schoolLifeDropdownOpen : false);
+    if (window.innerWidth < 1024) {
+      setActiveDropdown(activeDropdown === dropdown ? '' : dropdown);
+    }
   };
-  
 
   const renderDropdownIcon = (dropdown) => {
-    const isOpen = dropdown === 'schools'
-      ? schoolsDropdownOpen
-      : dropdown === 'about'
-        ? aboutDropdownOpen
-        : dropdown === 'academic'
-          ? academicDropdownOpen
-          : schoolLifeDropdownOpen;
-
-    return isOpen ? <FontAwesomeIcon icon={faAngleUp} /> : <FontAwesomeIcon icon={faAngleDown} />;
+    return activeDropdown === dropdown ? <FontAwesomeIcon icon={faAngleUp} /> : <FontAwesomeIcon icon={faAngleDown} />;
   };
 
   const toggleMenu = () => {
@@ -77,7 +46,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faTimes} />
           </div>
           <li className="nav-item">
-            <a href="/" className="nav-link">Home</a>
+            <a href="/" className="nav-link Home og">Home</a>
           </li>
           <li className="nav-item">
             <a
@@ -87,11 +56,10 @@ const Navbar = () => {
             >
               Our Schools {renderDropdownIcon('schools')}
             </a>
-            {schoolsDropdownOpen && (
+            {(activeDropdown === 'schools' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
-                <li><a href="#primary">British Curriculum</a></li>
-                <li><a href="#middle">Kenyan CBC Curriculum</a></li>
-                <li><a href="#middle">East African Curriculum</a></li>
+                <li><a href="#cbc-keumbu">Kenyan CBC Keumbu</a></li>
+                <li><a href="#cbc-narok">Kenyan CBC Narok</a></li>
               </ul>
             )}
           </li>
@@ -103,11 +71,11 @@ const Navbar = () => {
             >
               About {renderDropdownIcon('about')}
             </a>
-            {aboutDropdownOpen && (
+            {(activeDropdown === 'about' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
                 <li><a href="#mission">Mission</a></li>
                 <li><a href="#vision">Vision</a></li>
-                <li><a href="#core values">Core Values</a></li>
+                <li><a href="#core-values">Core Values</a></li>
               </ul>
             )}
           </li>
@@ -119,33 +87,32 @@ const Navbar = () => {
             >
               Academic {renderDropdownIcon('academic')}
             </a>
-            {academicDropdownOpen && (
+            {(activeDropdown === 'academic' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
-                <li><a href="/kindergarten">Kindergarten</a></li>
-                <li><a href="/preparatory">Preparatory</a></li>
-                <li><a href="/junior">Junior High School</a></li>
-                <li><a href="/senior">Senior High School</a></li>
+                <li><a href="#kindergarten">Kindergarten</a></li>
+                <li><a href="#preparatory">Preparatory</a></li>
+                <li><a href="#junior-high-school">Junior High School</a></li>
               </ul>
             )}
           </li>
           <li className="nav-item">
             <a
               href="#school-life"
-              className="nav-link"
+              className="nav-link Home"
               onClick={() => toggleDropdown('schoolLife')}
             >
               School Life {renderDropdownIcon('schoolLife')}
             </a>
-            {schoolLifeDropdownOpen && (
+            {(activeDropdown === 'schoolLife' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
-                <li><a href="#clubs">Extracurricular Activities</a></li>
-                <li><a href="#timetables">Time Tables</a></li>
-                <li><a href="#events">Events</a></li>
+                <li><a href="/clubs">Extracurricular Activities</a></li>
+                <li><a href="/timetables">Time Tables</a></li>
+                <li><a href="/events">Events</a></li>
               </ul>
             )}
           </li>
           <li className="nav-item">
-            <a href="#news" className="nav-link">News</a>
+            <a href="/news" className="nav-link Home">News</a>
           </li>
         </ul>
 
