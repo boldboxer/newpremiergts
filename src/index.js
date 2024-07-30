@@ -20,6 +20,8 @@ import {
 import DisplayAdmissionData from './components/display/admissiondata';
 import DisplayEnrollmentData from './components/display/enrollmentdata';
 import Layout from './components/Layout/Layout';
+import Notfound from "./components/Notfound";
+import HTwelcome from "./components/HTwelcome";
 
 
 const router = createBrowserRouter([
@@ -87,6 +89,16 @@ const router = createBrowserRouter([
     path: "/enrollment-data",
     element: <DisplayEnrollmentData />,
   },
+
+  {
+    path: "*", // This matches any route not defined above
+    element: <Notfound />, // Render the NotFound component
+  },
+
+  {
+    path: "HTwelcome",
+    element: <HTwelcome />,
+  }
 
 ]);
 

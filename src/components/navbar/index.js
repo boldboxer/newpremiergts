@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+// import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,7 +46,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faTimes} />
           </div>
           <li className="nav-item">
-            <a href="/" className="nav-link">Home</a>
+            <a href="/" className="nav-link Home og">Home</a>
           </li>
           <li className="nav-item">
             <a
@@ -97,21 +98,21 @@ const Navbar = () => {
           <li className="nav-item">
             <a
               href="#school-life"
-              className="nav-link"
+              className="nav-link Home"
               onClick={() => toggleDropdown('schoolLife')}
             >
               School Life {renderDropdownIcon('schoolLife')}
             </a>
             {(activeDropdown === 'schoolLife' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
-                <li><a href="#clubs">Extracurricular Activities</a></li>
-                <li><a href="#timetables">Time Tables</a></li>
-                <li><a href="#events">Events</a></li>
+                <li><a href="/clubs">Extracurricular Activities</a></li>
+                <li><a href="/timetables">Time Tables</a></li>
+                <li><a href="/events">Events</a></li>
               </ul>
             )}
           </li>
           <li className="nav-item">
-            <a href="#news" className="nav-link">News</a>
+            <a href="/news" className="nav-link Home">News</a>
           </li>
         </ul>
 

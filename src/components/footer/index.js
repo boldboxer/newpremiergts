@@ -21,9 +21,9 @@ const Footer = () => {
       <div className="footer-section">
         <h3>About Our School</h3>
         <ul>
-          <li>Our Headteacher's Welcome</li>
-          <li>Our School</li>
-          <li>Our Partners</li>
+          <li><a href="/HTwelcome">Our Headteacher's Welcome</a></li>
+          <li><a href="/ourschool">Our School</a></li>
+          <li><a href="/ourpartners">Our Partners</a></li>
         </ul>
       </div>
       <div className="footer-section">
@@ -59,8 +59,8 @@ const Footer = () => {
       <div className="footer-section">
         <h3>Parents</h3>
         <ul>
-          <li>Fee Structure</li>
-          <li>Parents Handbook</li>
+          <li><a href="/feestructure">Fee Structure</a></li>
+          <li><a href="/parentshandbook">Parents Handbook</a></li>
         </ul>
       </div>
     </footer>
