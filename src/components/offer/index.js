@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { FaBabyCarriage, FaGraduationCap, FaUserGraduate} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Offer = () => {
@@ -17,9 +18,9 @@ const Offer = () => {
               Our kindergarten program focuses on providing a nurturing and stimulating environment
               where young learners can develop foundational skills and social interactions.
             </p>
-            <a href="/kindergarten">
+            <Link to="/kindergarten">
             <button className="learn-more-button">Learn More</button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="offer-item" id = "preparatory">
@@ -31,9 +32,9 @@ const Offer = () => {
               In our preparatory school, students engage in comprehensive learning experiences that
               prepare them for the academic challenges of higher levels.
             </p>
-            <a href="/preparatory">
+            <Link to="/preparatory">
             <button className="learn-more-button">Learn More</button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="offer-item" id = "junior-high-school">
@@ -45,9 +46,9 @@ const Offer = () => {
               Our junior high school curriculum emphasizes critical thinking, exploration of diverse
               subjects, and character development to equip students for future success.
             </p>
-            <a href="/junior">
+            <Link to="/junior">
             <button className="learn-more-button">Learn More</button>
-            </a>
+            </Link>
           </div>
         </div>
         {/* <div className="offer-item">
