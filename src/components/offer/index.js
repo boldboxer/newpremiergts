@@ -10,7 +10,7 @@ const Offer = () => {
       <h1>What We Offer</h1>
       <div className="offer-items">
         <div className="offer-item" id = "kindergarten">
-          <img src="/images/kindergaten.jpg" alt="Kindergarten" />
+          <img src="/images/gerarnarok3.jpeg" alt="Kindergarten" />
           <div className="offer-content">
             <FaBabyCarriage className="offer-icon" />
             <h3>Kindergarten</h3>
@@ -24,7 +24,7 @@ const Offer = () => {
           </div>
         </div>
         <div className="offer-item" id = "preparatory">
-          <img src="/images/preparatory.jpg" alt="Preparatory" />
+          <img src="/images/children_playing1.jpeg" alt="Preparatory" />
           <div className="offer-content">
             <FaGraduationCap className="offer-icon" />
             <h3>Preparatory School</h3>
@@ -38,7 +38,7 @@ const Offer = () => {
           </div>
         </div>
         <div className="offer-item" id = "junior-high-school">
-          <img src="/images/junior.jpg" alt="Junior High School" />
+          <img src="/images/gerarnarok2.jpeg" alt="Junior High School" />
           <div className="offer-content">
             <FaUserGraduate className="offer-icon" />
             <h3>Junior High School</h3>

@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.css';
 
 const PreparatorySchool = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto", // Instant scroll
+    });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []); // This will scroll to top when Kindergarten component mounts
   return (
     <div className="preparatory-school-container">
       <section className="content-section">

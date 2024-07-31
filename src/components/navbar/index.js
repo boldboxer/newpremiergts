@@ -8,14 +8,26 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState('');
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <768);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <768);
+    }
+
+    // check and add event listeners
+    handleResize();
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    //cleanup after event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -65,22 +77,6 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <a
-              href="#about"
-              className="nav-link"
-              onClick={() => toggleDropdown('about')}
-            >
-              About {renderDropdownIcon('about')}
-            </a>
-            {(activeDropdown === 'about' || window.innerWidth >= 1024) && (
-              <ul className="dropdown-menu">
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#core-values">Core Values</a></li>
-              </ul>
-            )}
-          </li>
-          <li className="nav-item">
-            <a
               href="#academic"
               className="nav-link"
               onClick={() => toggleDropdown('academic')}
@@ -89,9 +85,9 @@ const Navbar = () => {
             </a>
             {(activeDropdown === 'academic' || window.innerWidth >= 1024) && (
               <ul className="dropdown-menu">
-                <li><a href="#kindergarten">Kindergarten</a></li>
-                <li><a href="#preparatory">Preparatory</a></li>
-                <li><a href="#junior-high-school">Junior High School</a></li>
+                <li><a href={isMobile ? "/kindergarten" : "#kindergarten"}>Kindergarten</a></li>
+                <li><a href={isMobile ? "/preparatory" : "#preparatory"}>Preparatory</a></li>
+                <li><a href={isMobile ? "/junior" : "#junior-high-school"}>Junior High School</a></li>
               </ul>
             )}
           </li>
@@ -113,6 +109,22 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <a href="/news" className="nav-link Home">News</a>
+          </li>
+          <li className="nav-item">
+            <a
+              href={isMobile ? "/notfound" : "#about"}
+              className="nav-link"
+              onClick={() => toggleDropdown('about')}
+            >
+              About {renderDropdownIcon('about')}
+            </a>
+            {(activeDropdown === 'about' || window.innerWidth >= 1024) && (
+              <ul className="dropdown-menu">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#core-values">Core Values</a></li>
+              </ul>
+            )}
           </li>
         </ul>
 

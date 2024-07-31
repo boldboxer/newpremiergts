@@ -11,7 +11,7 @@ const OurSchools = () => {
           <p>Kenyan CBC Curriculum Keumbu</p>
         </div>
         <div className="extracurricular-item" id="cbc-narok">
-          <img src="/images/cbc2.jpg" alt="Clubs and Membership" />
+          <img src="/images/gerarnarok1.jpeg" alt="Clubs and Membership" />
           <p>Kenyan CBC Curriculum Narok</p>
         </div>
         {/* <div className="extracurricular-item" id="east-african">

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    '/images/cbc2.jpg',
+    '/images/gerarnarok.jpeg',
     '/images/children_playing1.jpeg',
-    '/images/cbc1.jpg',
+    '/images/gerarnarok4.jpeg',
     '/images/children_playing5.jpeg'
   ];
 

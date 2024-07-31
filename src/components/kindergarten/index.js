@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const Kindergarten = () => {
@@ -7,6 +7,17 @@ const Kindergarten = () => {
   const handleDropdownClick = (dropdownId) => {
     setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []); // This will scroll to top when Kindergarten component mounts
 
   return (
     <div className="kindergarten-container">
@@ -116,8 +127,8 @@ const Kindergarten = () => {
               self-awareness, and emotional regulation.
             </p>
             <div className="additional-right">
-            <img src="/images/kinder5.jpg" alt="Additional" />
-          </div>
+              <img src="/images/kinder5.jpg" alt="Additional" />
+            </div>
             <p>
               Communication and Language: Developing listening, speaking, and early
               literacy skills through interactions and language activities.
@@ -141,8 +152,6 @@ const Kindergarten = () => {
               and imaginative play, fostering self-expression and exploration.
             </p>
           </div>
-
-
         </div>
       </section>
     </div>
