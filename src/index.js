@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   { path: "/kindergarten", element: <Kindergarten /> },
   { path: "/preparatory", element: <PreparatorySchool /> },
   { path: "/junior", element: <JuniorHighSchool /> },
-  { path: "*", element: <Notfound /> },
+  { path: "/*", element: <Notfound /> },
   { path: "/HTwelcome", element: <HTwelcome /> },
 ]);
 
