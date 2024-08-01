@@ -193,7 +193,15 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+
+  .navbar {
+    height: max-content;
+  }
+
+  .enroll-button {
+    padding: 8px 8px;
+  }
   
   .menu-icon {
     display: block;
@@ -204,6 +212,7 @@
 
   .navbar-logo img {
     max-width: 70px;
+    padding-left: 5px;
   }
 
  .nav-menu {
@@ -217,13 +226,14 @@
     /* transform: translateX(0); */
     display: flex;
     position: fixed;
-    top: 80px;
-    left: 10px;
-    width: 100%;
+    top: 0px;
+    right: 0;
+    /* left: 10px; */
+    width: 70%;
     background-color: rgb(248, 255, 255);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.87);
     z-index: 1000;
     list-style: none;
