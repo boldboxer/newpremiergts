@@ -1,6 +1,20 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const NotFound = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []); // This will scroll to top when Kindergarten component mounts
+
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>404</h1>

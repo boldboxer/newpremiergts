@@ -13,9 +13,9 @@ function App(){
      <HomePage/>
      <Mission/>
      <AboutUs/>
-     <ReasonsToChooseMela/>
      <OurSchools/>
      <Offer/>
+     <ReasonsToChooseMela/>
      <Future/>
     </div>
   );

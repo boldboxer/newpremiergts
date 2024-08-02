@@ -8,7 +8,7 @@ import App from './App';
 import FeeStructure from "./components/feestructure";
 import Kindergarten from "./components/kindergarten";
 import PreparatorySchool from "./components/preparatory";
-import JuniorHighSchool from "./components/juniorhighschool";
+// import JuniorHighSchool from "./components/juniorhighschool";
 import Notfound from "./components/Notfound";
 import HTwelcome from "./components/HTwelcome";
 import Layout from './components/Layout/Layout';
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   { path: "/feestructure", element: <FeeStructure /> },
   { path: "/kindergarten", element: <Kindergarten /> },
   { path: "/preparatory", element: <PreparatorySchool /> },
-  { path: "/junior", element: <JuniorHighSchool /> },
+  // { path: "/junior", element: <JuniorHighSchool /> },
   { path: "/*", element: <Notfound /> },
   { path: "/HTwelcome", element: <HTwelcome /> },
 ]);
