@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
@@ -8,13 +10,13 @@ const Footer = () => {
         <h3>Contact Information</h3>
         <ul className="contact-list">
           <li>
-            Address: Keumbu & Narok -Kenya
+            <FontAwesomeIcon icon={faMapMarkerAlt} /> Address: Keumbu & Narok -Kenya
           </li>
           <li>
-            Phone: 0712345678
+            <FontAwesomeIcon icon={faPhone} /> Phone: 0712345678
           </li>
           <li>
-            Email: gerartalentschool@gmail.com
+            <FontAwesomeIcon icon={faEnvelope} /> Email: gerartalentschool@gmail.com
           </li>
         </ul>
       </div>
@@ -62,6 +64,10 @@ const Footer = () => {
           <li><a href="/feestructure">Fee Structure</a></li>
           <li><a href="/parentshandbook">Parents Handbook</a></li>
         </ul>
+      </div>
+
+      <div className="footer-copyright">
+        Copyright © 2024 New Premier Talents Schools. All rights reserved.
       </div>
     </footer>
   );

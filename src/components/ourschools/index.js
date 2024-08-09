@@ -3,7 +3,7 @@ import './style.css';
 
 const OurSchools = () => {
   return (
-    <div className="extracurricular-container" >
+    <div className="extracurricular-container" id="our-schools">
       <h2>Our Schools</h2>
       <div className="extracurricular">
         <div className="extracurricular-item" id="cbc-keumbu">
