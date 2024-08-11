@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-copyright">
-        Copyright © 2024 New Premier Talents Schools. All rights reserved.
+        Copyright © 2024 New Premier Talent Schools. All rights reserved.
       </div>
     </footer>
   );

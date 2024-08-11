@@ -10,7 +10,7 @@ const HeadteacherWelcome = () => {
           <p className="paragraph">
             On behalf of the entire school community, I extend a warm and heartfelt welcome to all our learners, parents, and guardians.
             We are thrilled to have you join our vibrant and dynamic learning environment. At New Premier School, we are committed to providing
-            an exceptional education that nurtures the holistic development of every child. Our learner-centered approach ensures that each
+            exceptional education that nurtures the holistic development of every child. Our learner-centered approach ensures that each
             student’s unique potential is recognized and fostered. We believe that every child deserves opportunities to excel academically,
             socially, and emotionally.
           </p>
