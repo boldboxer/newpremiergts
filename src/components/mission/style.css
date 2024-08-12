@@ -18,6 +18,18 @@
   text-align: center;
 }
 
+.values {
+  list-style-type: none; /* Remove default list style */
+  padding: 0;
+  text-align: center;
+}
+
+.values li {
+  display: block;
+  /* list-style-image: url('/public/images/star.png');  */
+  margin-bottom: 10px; /* Adjust spacing between items */
+}
+
 .mission-vision-container {
   display: flex;
   justify-content: space-around;

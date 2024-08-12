@@ -1,44 +1,40 @@
 import React, { useState } from 'react';
+import './style.css';  // Import the CSS file
 
 const AboutUs = () => {
   const [currentImageIndex] = useState(0);
   const images = [
     '/images/about2.jpg',
-    '/images/about1.jpg', 
+    '/images/about1.jpg',
   ];
-
-  // const handleChangeImage = () => {
-  //   const newIndex = (currentImageIndex + 1) % images.length;
-  //   setCurrentImageIndex(newIndex);
-  // };
 
   const backgroundImage = images[currentImageIndex];
 
   return (
-    <div className="home-banner">
-      <div
-        className="about-us-container"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '400px', 
-          position: 'relative', 
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <div className="about-banner" style={aboutBannerStyle}>
-          <h1>Welcome to New Premier Talent School</h1>
+    <div
+      className="home-banner"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="about-us-container">
+        <div className="about-banner">
+          <h1>GERAR TALENT SCHOOLS (A NEW PREMIER SCHOOL)</h1>
           <p>
-            At New Premier Talent School, we are dedicated to empowering learners to thrive
-            in a dynamic world. Our mission is to provide an engaging and transformative education
-            experience that nurtures young minds and inspires a passion for learning.
+            Our schools cater for families seeking the Kenyan competency-based curriculum (CBC). We are enrolling
+            learners as follows:
+          </p>
+          <ul>
+            <li>Kindergarten (Pre-Primary): Day care, PP 1 &amp; PP 2</li>
+            <li>Primary: Grade 1 to 6</li>
+            <li>Junior Secondary School (JSS): Grade 7, 8 &amp; 9</li>
+          </ul>
+          <p>
+            The school caters for learners from vulnerable family backgrounds for inclusivity in education for all
+            through scholarships and donations from partners and well-wishers.
           </p>
           <p>
-            Explore our world of learning, where curiosity meets knowledge, and discover the
-            exceptional opportunities that await your child.
+            Each learner is given individual attention to ensure their unique talents and abilities are discovered and
+            allowed to develop to full potential. Hence classes are hands on, interactive and learner centered to
+            help them solve problems.
           </p>
         </div>
       </div>
@@ -46,16 +42,4 @@ const AboutUs = () => {
   );
 };
 
-const aboutBannerStyle = {
-  padding: '20px',
-  backgroundColor: 'rgba(255, 255, 255, 0.7)',
-  maxWidth: '1000px',
-  textAlign: 'center',
-};
-
 export default AboutUs;
-
-
-
-
-

@@ -13,19 +13,23 @@ const Mission = () => {
       <div className="mission-item">
         <h2>Mission</h2>
         <p>
-          Our mission is to empower learners to excel holistically and preparing them to thrive in a dynamic world.
+        To holistically empower learners, excel and ready to thrive in a dynamic world
         </p>
       </div>
       <div className="mission-item">
         <h2>Vision</h2>
         <p>
-          To be a leading institution that fosters creativity, innovation, and global citizenship among learners, preparing them to become future leaders in a diverse and interconnected world.
+        To be a premier institution fostering creativity, innovation and global citizenship.
         </p>
       </div>
       <div className="mission-item">
         <h2>Core Values</h2>
-        <p>
-          Integrity, respect, collaboration, and excellence in all endeavors.
+        <p><ul className="values">
+        <li>C Creativity</li>
+        <li>I Integrity</li>
+        <li>R Respect</li>
+        <li>E Excellence</li>
+        <li>C Collaboration</li></ul>
         </p>
       </div>
     </div>
