@@ -1,18 +1,13 @@
-/* Default styles for mobile-first approach */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgb(255, 255, 255);
-  padding: 15px 15px;
+  background: #fff;
+  padding: 15px;
   height: 70px;
   transition: height 0.5s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
-
-/* .navbar.scrolled {
-  height: 10vh;
-} */
 
 .navbar-container {
   display: flex;
@@ -38,23 +33,9 @@
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 40px;
   text-align: left;
   transition: transform 0.3s ease;
-}
-
-.nav-menu.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 90px;
-  right: 20px;
-  background-color: maroon;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 10px;
 }
 
 .nav-item {
@@ -76,7 +57,7 @@
   transform: translateY(50%);
 }
 
-.navbar.scrolled .nav-item .Home {
+.navbar.scrolled .Home {
   display: none;
 }
 
@@ -86,8 +67,8 @@
 
 .enroll-button {
   padding: 8px 16px;
-  background-color: rgb(66, 65, 65);
-  color: #ffffff;
+  background-color: #424141;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -105,9 +86,10 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  display: none;
 }
 
 .nav-item:hover .dropdown-menu {
@@ -116,7 +98,7 @@
 
 .dropdown-menu a {
   display: block;
-  color: #333333;
+  color: #333;
   text-decoration: none;
   padding: 8px 12px;
   transition: color 0.3s ease;
@@ -143,25 +125,18 @@
   z-index: 1100;
 }
 
-/* Media queries for responsiveness */
+.mobile-header {
+  display: none;
+}
 
 @media (min-width: 1024px) {
   .navbar {
     height: 90px;
-    background: #ffffff;
     transition: 0.5s ease-out;
   }
 
   .nav-link {
     font-size: medium;
-  }
-
-  .dropdown-menu {
-    display: none;
-  }
-
-  .nav-item:hover .dropdown-menu {
-    display: block;
   }
 }
 
@@ -175,7 +150,6 @@
   }
 
   .nav-menu {
-    display: flex;
     gap: 7px;
   }
 
@@ -185,27 +159,23 @@
   }
 
   .enroll-button {
-    display: inline-block; /* Ensures padding and border apply correctly */
-    padding: 8px 16px; /* Adjust padding to reduce button size */
-    font-size: 10px; /* Decrease font size */
-    border-radius: 8px; /* Adjust border-radius if needed */
+    padding: 8px 16px;
+    font-size: 10px;
+    border-radius: 8px;
   }
-
 }
 
-@media (max-width: 768px) { 
-
+@media (max-width: 768px) {
   .navbar {
     height: max-content;
   }
 
   .enroll-button {
-    padding: 8px 8px;
+    padding: 8px;
   }
-  
+
   .menu-icon {
     display: block;
-    font-size: 24px;
     z-index: 1100;
     margin-right: 15px;
   }
@@ -215,45 +185,47 @@
     padding-left: 5px;
   }
 
- .nav-menu {
+  .nav-menu {
     display: none;
-    height: 100%;
-    transform: translateX(100%); /* Hide off-screen initially */
-    transition: transform 3s ease; /* Slide in effect */
-} 
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
 
   .mobile-menu-open {
-    /* transform: translateX(0); */
     display: flex;
     position: fixed;
-    top: 0px;
+    top: 0;
     right: 0;
-    /* left: 10px; */
-    width: 70%;
+    height: 100vh;
+    width: 100%;
     background-color: rgb(248, 255, 255);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.87);
-    z-index: 1000;
-    list-style: none;
-    padding: 10px;
+    padding: 20px;
     overflow-y: auto;
-    overflow-x: hidden;
     transform: translateX(0);
   }
-
-  
 
   .dropdown-menu {
     position: static;
   }
 
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6.25rem;
+    border-bottom: 1px solid #0f0f0f;
+  }
 
-  .close-button {
-    display: none;
-    top: 20px;
-    right: 20px;
+  .mobile-header span {
+    flex-grow: 3;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: maroon;
   }
 
   .inactive-background {
@@ -264,16 +236,19 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-  } 
-
+  }
 
   .nav-link {
     font-size: 1.2em;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
   }
 
   .close-button {
     top: 10px;
     right: 10px;
+    
   }
 }
 
