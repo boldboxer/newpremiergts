@@ -31,9 +31,8 @@ const Navbar = () => {
   }, []);
 
   const toggleDropdown = (dropdown) => {
-    if (isMobile) {
-      setActiveDropdown(activeDropdown === dropdown ? '' : dropdown);
-    }
+    // Always set the active dropdown state
+    setActiveDropdown(dropdown);
   };
 
   const renderDropdownIcon = (dropdown) => {
@@ -66,7 +65,7 @@ const Navbar = () => {
           </li>
           <li
             className="nav-item"
-            onClick={() => toggleDropdown('schools')}
+            onMouseEnter={() => toggleDropdown('schools')} onMouseLeave={() => setActiveDropdown('')}
           >
             <a href="#ourschools" className="nav-link">
               Our Schools {renderDropdownIcon('schools')}
@@ -80,7 +79,7 @@ const Navbar = () => {
           </li>
           <li
             className="nav-item"
-            onClick={() => toggleDropdown('academic')}
+            onMouseEnter={() => toggleDropdown('academic')} onMouseLeave={() => setActiveDropdown('')}
           >
             <a href="#academic" className="nav-link">
               Academic {renderDropdownIcon('academic')}
@@ -95,7 +94,7 @@ const Navbar = () => {
           </li>
           <li
             className="nav-item"
-            onClick={() => toggleDropdown('schoolLife')}
+            onMouseEnter={() => toggleDropdown('schoolLife')} onMouseLeave={() => setActiveDropdown('')}
           >
             <a href="#school-life" className="nav-link Home">
               School Life {renderDropdownIcon('schoolLife')}
@@ -113,7 +112,7 @@ const Navbar = () => {
           </li>
           <li
             className="nav-item"
-            onClick={() => toggleDropdown('about')}
+            onMouseEnter={() => toggleDropdown('about')} onMouseLeave={() => setActiveDropdown('')}
           >
             <a href={isMobile ? "/notfound" : "#about"} className="nav-link">
               About {renderDropdownIcon('about')}
